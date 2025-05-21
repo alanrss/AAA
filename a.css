@@ -101,13 +101,15 @@ button:hover {
 }
  /* Corazones flotando */
     .corazon {
+ .corazon {
   position: fixed;
+  left: 0;
+  top: 0;
   pointer-events: none;
   z-index: 9999;
-  /* Tamaño grande y animación */
-  animation: flotar 6s linear forwards;
+  user-select: none;
+  transition: opacity 0.5s;
 }
-
 @keyframes flotar {
   from {
     transform: translateY(0);
