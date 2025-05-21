@@ -101,29 +101,23 @@ button:hover {
 }
  /* Corazones flotando */
     .corazon {
-      position: fixed;
-      color: #d6336c;
-      font-size: 20px;
-      user-select: none;
-      animation-name: flotar;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-    }
-    @keyframes flotar {
-      0% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 1;
-      }
-      50% {
-        transform: translateY(-30px) translateX(10px) rotate(20deg);
-        opacity: 0.7;
-      }
-      100% {
-        transform: translateY(0) translateX(0) rotate(0deg);
-        opacity: 1;
-      }
-  }
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  /* Tamaño grande y animación */
+  animation: flotar 6s linear forwards;
+}
 
+@keyframes flotar {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
     /* Controles música */
     .music-control {
       text-align: center;
@@ -135,3 +129,11 @@ caption {
     color: #880e4f;
     font-weigth:bold;
     }
+function verificarPassword(){
+    const password = prompt("ingresa la contrasena:");
+    if(password === "teamo123"){
+        window.location.href = "pagina_secreta.html";
+    } else {
+        alert("contrasena incorrecta");
+    }
+}
