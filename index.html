@@ -66,24 +66,25 @@ Espero que te guste este detalle, enserio lo hice con mucho amor,no es algo con 
         <p>&copy; Te amo❤</p>
     </footer>
     <script>
-        // Corazones flotando
-    function crearCorazon() {
-      const corazon = document.createElement("div");
-      corazon.classList.add("corazon");
-      corazon.style.left = Math.random() * window.innerWidth + "px";
-      corazon.style.top = window.innerHeight + 20 + "px";
-      corazon.style.fontSize = (30 + Math.random() * 60) + "px"; 
-      corazon.style.animationDuration = (3 + Math.random() * 3) + "s";
-      corazon.textContent = "❤️";
-      document.body.appendChild(corazon);
+        function crearCorazon() {
+  const corazon = document.createElement("div");
+  corazon.classList.add("corazon");
+  // Posición horizontal aleatoria
+  corazon.style.left = Math.random() * window.innerWidth + "px";
+  // Siempre desde arriba
+  corazon.style.top = "0px";
+  // Tamaño aleatorio
+  corazon.style.fontSize = (30 + Math.random() * 60) + "px";
+  // Duración de la caída aleatoria
+  corazon.style.animationDuration = (2 + Math.random() * 3) + "s";
+  corazon.textContent = "❤️";
+  document.body.appendChild(corazon);
 
-      setTimeout(() => {
-        corazon.remove();
-      }, 6000);
-    }
-
-    setInterval(crearCorazon, 500);
-
+  setTimeout(() => {
+    corazon.remove();
+  }, 5000);
+}
+        setInterval(crearCorazon, 500);
   </script>
 </body>
 </html>
