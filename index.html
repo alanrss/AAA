@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi regalo</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+.heart {
+  position: fixed;
+  top: -50px;
+  font-size: 2rem;
+  color: #e25555;
+  pointer-events: none;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0.8;
+  }
+}
+</style>
 </head>
 <body>
     <header>
@@ -66,25 +83,29 @@ Espero que te guste este detalle, enserio lo hice con mucho amor,no es algo con 
         <p>&copy; Te amo❤</p>
     </footer>
     <script>
-        function crearCorazon() {
-  const corazon = document.createElement("div");
-  corazon.classList.add("corazon");
-  // Posición horizontal aleatoria
-  corazon.style.left = Math.random() * window.innerWidth + "px";
-  // Siempre desde arriba
-  corazon.style.top = "0px";
-  // Tamaño aleatorio
-  corazon.style.fontSize = (30 + Math.random() * 60) + "px";
-  // Duración de la caída aleatoria
-  corazon.style.animationDuration = (2 + Math.random() * 3) + "s";
-  corazon.textContent = "❤️";
-  document.body.appendChild(corazon);
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerText = '❤️';
 
+  // Posición horizontal aleatoria
+  heart.style.left = Math.random() * 100 + 'vw';
+  // Tamaño aleatorio
+  heart.style.fontSize = (Math.random() * 24 + 16) + 'px';
+  // Duración de la animación aleatoria
+  const duration = Math.random() * 2 + 2; // 2 a 4 segundos
+  heart.style.animationDuration = duration + 's';
+
+  document.body.appendChild(heart);
+
+  // Quita el corazón cuando termine la animación
   setTimeout(() => {
-    corazon.remove();
-  }, 5000);
+    heart.remove();
+  }, duration * 1000);
 }
-        setInterval(crearCorazon, 500);
-  </script>
+
+// Genera corazones continuamente
+setInterval(createHeart, 300);
+</script>
 </body>
 </html>
