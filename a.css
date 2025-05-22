@@ -99,27 +99,7 @@ button:hover {
       right: 10px;
     }
 }
- /* Corazones flotando */
-.corazon {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9999;
-  font-size: 40px;
-  pointer-events: none;
-  animation: caer 3s linear forwards;
-}
 
-@keyframes caer {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0.7;
-  }
-}
     /* Controles música */
     .music-control {
       text-align: center;
@@ -130,12 +110,5 @@ caption {
     background-color:#f8bbd0;
     color: #880e4f;
     font-weigth:bold;
-    }
-function verificarPassword(){
-    const password = prompt("ingresa la contrasena:");
-    if(password === "teamo123"){
-        window.location.href = "pagina_secreta.html";
-    } else {
-        alert("contrasena incorrecta");
     }
 }
